@@ -12,12 +12,12 @@
     "dva": "^2.1.0",
     "lodash": "^4.17.5",
     "moment": "^2.21.0",
-    "path-to-regexp": "^2.1.0",
+    "path-to-regexp": "^2.2.0",
     "prop-types": "^15.6.1",
     "qs": "^6.5.1",
     "query-string": "^5.1.0",
     "react": "^16.2.0",
-    "umi": "^1.0.5",
+    "umi": "^1.0.6",
     "umi-plugin-dva": "^0.3.0"
   },
   "devDependencies": {
