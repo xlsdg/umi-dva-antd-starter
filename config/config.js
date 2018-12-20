@@ -39,7 +39,7 @@ export default {
   plugins,
   // https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
   theme: {
-    '@brand-primary': '#0078ff',
+    '@primary-color': '#0078ff',
   },
   targets: {
     ie: 11,
