@@ -37,7 +37,7 @@
     "stylelint-order": "^2.0.0",
     "umi": "^2.2.8",
     "umi-plugin-react": "^1.2.3",
-    "webpack": "^4.28.0"
+    "webpack": "^4.28.1"
   },
   "engines": {
     "node": ">=8.0.0"
