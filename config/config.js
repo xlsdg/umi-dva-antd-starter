@@ -45,6 +45,7 @@ export default {
   theme: {
     '@primary-color': '#0078ff',
   },
+  treeShaking: true,
   targets: {
     ie: 11,
   },
