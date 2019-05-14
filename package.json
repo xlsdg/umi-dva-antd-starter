@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "antd": "^3.17.0",
+    "antd": "^3.18.1",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "lodash": "^4.17.11",
@@ -28,7 +28,7 @@
     "husky": "^2.2.0",
     "lint-staged": "^8.1.6",
     "lodash-webpack-plugin": "^0.11.5",
-    "prettier": "^1.17.0",
+    "prettier": "^1.17.1",
     "stylelint": "^10.0.1",
     "stylelint-config-prettier": "^5.1.0",
     "stylelint-config-standard": "^18.3.0",
