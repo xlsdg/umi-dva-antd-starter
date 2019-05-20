@@ -6,14 +6,12 @@ import React from 'react';
 
 import styles from './404.less';
 
-NotFound.propTypes = {};
-
-NotFound.defaultProps = {};
-
 function NotFound(props) {
-  return (
-    <div className={styles.container}>404</div>
-  );
+  return <div className={styles.container}>404</div>;
 }
+
+// NotFound.propTypes = {};
+
+// NotFound.defaultProps = {};
 
 export default NotFound;
