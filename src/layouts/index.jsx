@@ -6,13 +6,17 @@ import { Layout } from 'antd';
 import styles from './index.less';
 
 class BasicLayout extends React.Component {
-  state = {};
-
   static propTypes = {
     children: PropTypes.node.isRequired,
   };
 
   static defaultProps = {};
+
+  constructor() {
+    super(...arguments);
+    // console.log('constructor', arguments);
+    this.state = {};
+  }
 
   componentDidUpdate(prevProps) {
     const that = this;
@@ -42,7 +46,7 @@ class BasicLayout extends React.Component {
     const that = this;
 
     return (
-      <Layout className={styles.main}>
+      <Layout className={styles.container}>
         {that.renderHeader()}
         {that.renderContent()}
         {that.renderFooter()}
