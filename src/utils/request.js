@@ -3,7 +3,7 @@ import Axios from 'axios';
 import QueryString from 'qs';
 
 import { ReqError } from './error';
-import { getLocale } from './helper';
+import { getLocale, getToken } from './helper';
 
 export const defaultRequestOptions = {
   useBaseRequest: true,
@@ -63,7 +63,7 @@ const GeneralRequest = Axios.create(generalRequestConfig);
 
 function handleRequestHeaders(headers, options = {}) {
   if (options.tokenInHeader) {
-    headers.token = global.__token__;
+    headers.token = getToken();
   }
 
   return headers;
@@ -79,7 +79,7 @@ function handleRequestData(data, options = {}) {
   }
 
   if (options.tokenInData) {
-    data.token = global.__token__;
+    data.token = getToken();
   }
 
   return data;

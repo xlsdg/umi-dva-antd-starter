@@ -11,3 +11,7 @@ export function px2RemStr(px) {
 export function getLocale() {
   return getLocaleString();
 }
+
+export function getToken() {
+  return '';
+}
