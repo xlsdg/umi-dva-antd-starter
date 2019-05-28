@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "antd": "^3.19.0",
+    "antd": "^3.19.1",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "lodash": "^4.17.11",
@@ -16,9 +16,6 @@
     "@commitlint/config-conventional": "^7.6.0",
     "babel-eslint": "^10.0.1",
     "babel-plugin-lodash": "^3.3.4",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "babel-plugin-transform-remove-console": "^6.9.4",
-    "babel-plugin-transform-remove-debugger": "^6.9.4",
     "cross-env": "^5.2.0",
     "eslint": "^5.16.0",
     "eslint-config-alloy": "^1.4.2",
@@ -52,5 +49,5 @@
     "start": "umi dev",
     "test": "umi test"
   },
-  "version": "0.0.1"
+  "version": "0.1.0"
 }

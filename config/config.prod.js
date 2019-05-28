@@ -14,11 +14,7 @@ export default {
   cssPublicPath: PUBLIC_PATH,
 
   define,
-  extraBabelPlugins: [
-    'transform-react-remove-prop-types',
-    'transform-remove-console',
-    'transform-remove-debugger',
-  ],
+  // extraBabelPlugins: [],
   manifest: {
     basePath: PUBLIC_PATH,
   },
