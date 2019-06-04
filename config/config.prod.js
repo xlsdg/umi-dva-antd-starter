@@ -18,4 +18,7 @@ export default {
   manifest: {
     basePath: PUBLIC_PATH,
   },
+  cssLoaderOptions: {
+    localIdentName: '[hash:base64:8]',
+  },
 };
