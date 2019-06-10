@@ -83,7 +83,7 @@ export default {
   // mountElementId: 'root',
   minimizer: 'uglifyjs', // 'terserjs'
   hash: true,
-  targets: { chrome: 49, firefox: 45, safari: 10, edge: 13, ios: 10 },
+  targets: { ie: 11, chrome: 49, firefox: 45, safari: 10, edge: 13, ios: 10 },
   // context: {},
   // exportStatic: { htmlSuffix: false, dynamicRoot: false },
   // singular: false,
