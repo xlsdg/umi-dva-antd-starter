@@ -28,6 +28,7 @@ const plugins = [
         default: 'zh-CN',
         baseNavigator: false,
         antd: true,
+        baseSeparator: '-',
       },
       library: 'react',
       dynamicImport: {
@@ -35,8 +36,10 @@ const plugins = [
         loadingComponent: './components/Loading/index.jsx',
         // level: ,
       },
-      dll: false, // { include: , exclude: , }
-      hardSource: false,
+      // dll: {
+      //   include: [],
+      //   exclude: [],
+      // },
       // pwa: {
       //   manifestOptions: {
       //     srcPath: 'src/manifest.json',
@@ -57,8 +60,8 @@ const plugins = [
         useLocale: true,
       },
       // chunks: ['umi'],
-      // scripts: [{}],
-      // headScripts: [{}],
+      // scripts: [{}, ''],
+      // headScripts: [{}, ''],
       // metas: [{}],
       // links: [{}],
     },
@@ -67,6 +70,7 @@ const plugins = [
 
 const define = {
   'process.env.NODE_ENV': process.env.NODE_ENV,
+  'process.env.UMI_ENV': process.env.UMI_ENV,
 };
 
 // https://umijs.org/config/
@@ -78,10 +82,10 @@ export default {
   outputPath: './dist',
   // base: '/',
   // publicPath: '/',
-  // cssPublicPath: '/',
   runtimePublicPath: false,
-  // mountElementId: 'root',
-  minimizer: 'uglifyjs', // 'terserjs'
+  // cssPublicPath: '/',
+  mountElementId: 'root',
+  minimizer: 'terserjs', // uglifyjs, terserjs
   hash: true,
   targets: { ie: 11, chrome: 49, firefox: 45, safari: 10, edge: 13, ios: 10 },
   // context: {},
@@ -90,9 +94,14 @@ export default {
   // mock: {
   //   exclude: [],
   // },
+  // block: {
+  //   defaultGitUrl: 'https://github.com/ant-design/pro-blocks',
+  // },
+  ssr: false,
 
   chainWebpack,
-  theme: { // https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
+  theme: {
+    // https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
     '@primary-color': '#0078ff',
   },
   treeShaking: true,
@@ -108,6 +117,7 @@ export default {
   // extraBabelIncludes: [],
   // extraPostCSSPlugins: [],
   // cssModulesExcludes: [],
+  // generateCssModulesTypings: true,
   // copy: [],
   // proxy: {},
   // sass: {},
@@ -117,6 +127,6 @@ export default {
   ignoreMomentLocale: true,
   // lessLoaderOptions: {},
   // cssLoaderOptions: {},
-  // autoprefixer: { browserslist, flexbox: 'no-2019' },
+  // autoprefixer: { browsers: DEFAULT_BROWSERS, flexbox: true },
   // uglifyJSOptions: {},
 };
