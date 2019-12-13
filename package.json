@@ -32,8 +32,8 @@
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-order": "^3.1.1",
     "stylelint-prettier": "^1.1.1",
-    "umi": "^2.12.5",
-    "umi-plugin-react": "^1.14.8"
+    "umi": "^2.12.6",
+    "umi-plugin-react": "^1.14.9"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -43,8 +43,8 @@
     "analyze": "cross-env ANALYZE=1 umi build",
     "build": "cross-env UMI_ENV=prod umi build",
     "dev": "cross-env UMI_ENV=local umi build",
-    "lint": "eslint --ext .js src",
-    "lint:fix": "eslint --fix --ext .js src && npm run lint:style",
+    "lint": "eslint --ext .jsx,.js src",
+    "lint:fix": "eslint --fix --ext .jsx,.js src && npm run lint:style",
     "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
     "prettier": "prettier --write './src/**/*.{js,jsx,ts,tsx,less,scss,css}'",
     "start": "umi dev",
