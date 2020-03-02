@@ -1,57 +1,56 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import withRouter from 'umi/withRouter';
-import { Layout } from 'antd';
+import { ConfigProvider } from 'antd';
 
-import styles from './index.less';
+import HomeLayout from './Home';
 
-class BasicLayout extends React.Component {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-  };
+// import styles from './index.less';
 
-  static defaultProps = {};
+class BasicLayout extends React.PureComponent {
+  // static propTypes = {};
 
-  constructor() {
-    super(...arguments);
-    // console.log('constructor', arguments);
-    this.state = {};
-  }
+  // static defaultProps = {};
 
-  componentDidUpdate(prevProps) {
+  // constructor() {
+  //   super(...arguments);
+  //   // console.log('constructor', arguments);
+  //   const that = this;
+  //   that.state = {};
+  // }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
     const that = this;
+    // console.log('componentDidUpdate', prevProps, that.props, prevState, that.state, snapshot);
     const { location } = that.props;
+    // const {  } = that.state;
 
     if (location !== prevProps.location) {
       window.scrollTo(0, 0);
     }
   }
 
-  renderHeader = () => {
-    return <Layout.Header className={styles.header}>Header</Layout.Header>;
-  };
-
-  renderContent = () => {
-    const that = this;
-    const { children } = that.props;
-
-    return <Layout.Content className={styles.content}>{children}</Layout.Content>;
-  };
-
-  renderFooter = () => {
-    return <Layout.Footer className={styles.footer}>Footer</Layout.Footer>;
-  };
-
   render() {
     const that = this;
+    // console.log('render', that.props, that.state);
+    const { location, children } = that.props;
+    // const {  } = that.state;
 
-    return (
-      <Layout className={styles.container}>
-        {that.renderHeader()}
-        {that.renderContent()}
-        {that.renderFooter()}
-      </Layout>
-    );
+    let layout = <HomeLayout>{children}</HomeLayout>;
+
+    const config = {
+      autoInsertSpaceInButton: false,
+      // componentSize: ,
+      // csp: { nonce: '' },
+      // form: {},
+      // renderEmpty,
+      // getPopupContainer: () => document.body,
+      // locale: ,
+      // prefixCls: '',
+      // pageHeader: { ghost: true },
+      // direction: 'ltr',
+    };
+    return <ConfigProvider {...config}>{layout}</ConfigProvider>;
   }
 }
 

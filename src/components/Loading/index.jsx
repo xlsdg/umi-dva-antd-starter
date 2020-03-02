@@ -1,18 +1,21 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import { Col, Row, Spin } from 'antd';
+import ClassNames from 'classnames';
+import { Spin } from 'antd';
 
 import styles from './index.less';
 
-function Loading(props) {
+const Loading = React.memo(props => {
+  const { className, children, ...others } = props;
+
   return (
-    <Row className={styles.loadingContainer} type="flex" align="middle" justify="center">
-      <Col className={styles.loading}>
-        <Spin {...props} />
-      </Col>
-    </Row>
+    <div className={ClassNames(styles.container, className)}>
+      <Spin className={styles.loading} {...others}>
+        {children}
+      </Spin>
+    </div>
   );
-}
+});
 
 // Loading.propTypes = {};
 
