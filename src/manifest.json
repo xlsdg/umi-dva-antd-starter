@@ -2,7 +2,7 @@
   "name": "ANTD",
   "short_name": "ANTD",
   "start_url": "./?utm_source=home",
-  "theme_color": "#426bff",
+  "theme_color": "#0078ff",
   "background_color": "#ffffff",
   "orientation": "portrait",
   "display": "standalone",
