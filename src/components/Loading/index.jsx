@@ -17,8 +17,8 @@ const Loading = React.memo(props => {
   );
 });
 
-// Loading.propTypes = {};
+Loading.propTypes = {};
 
-// Loading.defaultProps = {};
+Loading.defaultProps = {};
 
 export default Loading;
