@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React from 'react';
 // import PropTypes from 'prop-types';
 import ClassNames from 'classnames';
@@ -8,9 +9,10 @@ import styles from './index.less';
 const Loading = React.memo(props => {
   const { className, children, ...others } = props;
 
+  const spinProps = _.pick(others, ['delay', 'indicator', 'size', 'spinning', 'tip', 'wrapperClassName']);
   return (
     <div className={ClassNames(styles.container, className)}>
-      <Spin className={styles.loading} {...others}>
+      <Spin className={styles.loading} {...spinProps}>
         {children}
       </Spin>
     </div>
