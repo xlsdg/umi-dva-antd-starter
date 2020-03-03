@@ -9,14 +9,14 @@ const define = {
 // https://umijs.org/config/
 export default {
   base: BASE_PATH,
-  publicPath: PUBLIC_PATH,
-  cssPublicPath: PUBLIC_PATH,
-
+  cssLoader: {
+    modules: {
+      localIdentName: '[local]--[hash:base64:5]',
+    },
+  },
   define,
   manifest: {
     basePath: PUBLIC_PATH,
   },
-  cssLoaderOptions: {
-    localIdentName: '[local]--[hash:base64:5]',
-  },
+  publicPath: PUBLIC_PATH,
 };
