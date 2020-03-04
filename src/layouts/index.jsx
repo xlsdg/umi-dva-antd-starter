@@ -6,40 +6,25 @@ import { ConfigProvider } from 'antd';
 
 import HomeLayout from './Home';
 
+import { useDeepCompareEffect } from '@/utils/hook';
+
 // import styles from './index.less';
 
-class BasicLayout extends React.PureComponent {
-  // static propTypes = {};
+const BasicLayout = React.memo(props => {
+  const { children, location } = props;
 
-  // static defaultProps = {};
-
-  // constructor() {
-  //   super(...arguments);
-  //   // console.log('constructor', arguments);
-  //   const that = this;
-  //   that.state = {};
-  // }
-
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    const that = this;
-    // console.log('componentDidUpdate', prevProps, that.props, prevState, that.state, snapshot);
-    const { location } = that.props;
-    // const {  } = that.state;
-
-    if (!_.isEqual(location, prevProps.location)) {
+  const locationRef = React.useRef(location);
+  useDeepCompareEffect(() => {
+    if (!_.isEqual(locationRef.current, location)) {
+      locationRef.current = location;
       window.scrollTo(0, 0);
     }
-  }
+  }, [location]);
 
-  render() {
-    const that = this;
-    // console.log('render', that.props, that.state);
-    const { location, children } = that.props;
-    // const {  } = that.state;
+  let layout = <HomeLayout>{children}</HomeLayout>;
 
-    let layout = <HomeLayout>{children}</HomeLayout>;
-
-    const config = {
+  const config = React.useMemo(
+    () => ({
       autoInsertSpaceInButton: false,
       // componentSize: ,
       // csp: { nonce: '' },
@@ -50,9 +35,11 @@ class BasicLayout extends React.PureComponent {
       // prefixCls: '',
       // pageHeader: { ghost: true },
       // direction: 'ltr',
-    };
-    return <ConfigProvider {...config}>{layout}</ConfigProvider>;
-  }
-}
+    }),
+    []
+  );
+
+  return <ConfigProvider {...config}>{layout}</ConfigProvider>;
+});
 
 export default withRouter(BasicLayout);
