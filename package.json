@@ -17,8 +17,8 @@
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@umijs/plugin-antd": "^0.3.0",
-    "@umijs/plugin-dva": "^0.6.1",
-    "@umijs/plugin-locale": "^0.3.0",
+    "@umijs/plugin-dva": "^0.6.3",
+    "@umijs/plugin-locale": "^0.4.1",
     "babel-eslint": "^10.1.0",
     "babel-plugin-lodash": "^3.3.4",
     "cross-env": "^7.0.2",
@@ -37,7 +37,7 @@
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-order": "^4.0.0",
     "stylelint-prettier": "^1.1.2",
-    "umi": "^3.0.7"
+    "umi": "^3.0.10"
   },
   "engines": {
     "node": ">=10.13.0"
