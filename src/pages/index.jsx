@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'umi';
 // import { formatMessage } from 'umi';
+import { Button } from 'antd';
 
 import NAMESPACES from '@/redux/namespaces';
 import { generateSetStateAction } from '@/redux/actions';
@@ -10,7 +11,11 @@ import styles from './index.less';
 const Content = React.memo(props => {
   // const {  } = props;
   // console.log(props);
-  return <div className={styles.container}>Home</div>;
+  return (
+    <div className={styles.container}>
+      <Button>Home</Button>
+    </div>
+  );
 });
 
 Content.propTypes = {};
