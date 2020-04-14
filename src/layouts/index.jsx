@@ -4,11 +4,10 @@ import React from 'react';
 import { withRouter } from 'umi';
 import { ConfigProvider } from 'antd';
 
-import HomeLayout from './Home';
+import DefaultLayout from './default';
+import UserLayout from './user';
 
 import { useDeepCompareEffect } from '@/utils/hook';
-
-// import styles from './index.less';
 
 const BasicLayout = React.memo(props => {
   const { children, location } = props;
@@ -21,23 +20,26 @@ const BasicLayout = React.memo(props => {
     }
   }, [location]);
 
-  let layout = <HomeLayout>{children}</HomeLayout>;
+  let layout = <DefaultLayout location={location}>{children}</DefaultLayout>;
 
-  const config = React.useMemo(
-    () => ({
-      autoInsertSpaceInButton: false,
-      // componentSize: ,
-      // csp: { nonce: '' },
-      // form: {},
-      // renderEmpty,
-      // getPopupContainer: () => document.body,
-      // locale: ,
-      // prefixCls: '',
-      // pageHeader: { ghost: true },
-      // direction: 'ltr',
-    }),
-    []
-  );
+  const { pathname } = location;
+  const pathString = pathname !== '/' ? _.trimEnd(pathname, '/') : pathname;
+  if (_.startsWith(pathString, '/user/')) {
+    layout = <UserLayout location={location}>{children}</UserLayout>;
+  }
+
+  const config = {
+    autoInsertSpaceInButton: false,
+    // componentSize: ,
+    // csp: { nonce: '' },
+    // form: {},
+    // renderEmpty,
+    // getPopupContainer: () => document.body,
+    // locale: ,
+    // prefixCls: '',
+    // pageHeader: { ghost: true },
+    // direction: 'ltr',
+  };
 
   return <ConfigProvider {...config}>{layout}</ConfigProvider>;
 });

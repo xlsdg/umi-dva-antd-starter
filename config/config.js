@@ -49,7 +49,15 @@ export default defineConfig({
   // base: '/',
   chainWebpack,
   // chunks: ['umi'],
-  // cssLoader: {},
+  cssLoader: {
+    modules: {
+      getLocalIdent: (context, localIdentName, localName, options) => {
+        if (context.resourcePath.includes('node_modules') || context.resourcePath.includes('global.less')) {
+          return localName;
+        }
+      },
+    },
+  },
   // cssModulesTypescriptLoader: ,
   // cssnano: {},
   // copy: [],
@@ -57,7 +65,7 @@ export default defineConfig({
   // devServer: {},
   // devtool: {},
   dynamicImport: {
-    loading: '@/components/Loading',
+    loading: '@/components/PageLoading',
   },
   // exportStatic: { htmlSuffix: false, dynamicRoot: false },
   // externals: {},
