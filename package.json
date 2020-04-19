@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "antd": "^4.1.3",
+    "antd": "^4.1.4",
     "classnames": "^2.2.6",
     "dva": "^2.6.0-beta.20",
     "fast-deep-equal": "^3.1.1",
@@ -31,7 +31,7 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^3.0.0",
     "husky": "^4.2.5",
-    "lint-staged": "^10.1.3",
+    "lint-staged": "^10.1.5",
     "lodash-webpack-plugin": "^0.11.5",
     "prettier": "^2.0.4",
     "stylelint": "^13.3.2",

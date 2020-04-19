@@ -148,4 +148,18 @@ export function generateLoadingSelector(types, namespace) {
   );
 }
 
+export function generateLoadingSelectorByFilter(loadingSelector = {}, filter = []) {
+  if (!hasPlainObject(loadingSelector) || !hasArray(filter)) {
+    return loadingSelector;
+  }
+
+  const result = {};
+  const newLoadingSelector = _.pick(loadingSelector, filter);
+  return loading =>
+    mergeObject(
+      result,
+      _.mapValues(newLoadingSelector, selector => selector(loading))
+    );
+}
+
 export default generateActionsByTypes(TYPES);
