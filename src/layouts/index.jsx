@@ -9,7 +9,7 @@ import UserLayout from './user';
 
 import { useDeepCompareEffect } from '@/utils/hook';
 
-const BasicLayout = React.memo(props => {
+function BasicLayout(props) {
   const { children } = props;
 
   const location = useLocation();
@@ -43,6 +43,10 @@ const BasicLayout = React.memo(props => {
   };
 
   return <ConfigProvider {...config}>{layout}</ConfigProvider>;
-});
+}
 
-export default BasicLayout;
+BasicLayout.propTypes = {};
+
+BasicLayout.defaultProps = {};
+
+export default React.memo(BasicLayout);

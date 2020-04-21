@@ -1,32 +1,29 @@
 import React from 'react';
 import { connect } from 'umi';
-// import { formatMessage } from 'umi';
-import { Button } from 'antd';
+// import {  } from 'umi';
+// import {  } from 'antd';
 
 import { createStateSelector } from '@/redux/actions/home';
 
 import styles from './index.less';
 
-const Content = React.memo(props => {
+function Body(props) {
   // const {  } = props;
   // console.log(props);
-  return (
-    <div className={styles.container}>
-      <Button>Home</Button>
-    </div>
-  );
-});
+  return <div className={styles.container}>Home</div>;
+}
 
-Content.propTypes = {};
+Body.propTypes = {};
 
-Content.defaultProps = {};
+Body.defaultProps = {};
 
 const [stateSelector, setStateSelector] = createStateSelector('');
+// const [dispatchSelector, loadingSelector] = createDispatchSelector();
 
 function mapStateToProps(state, ownProps) {
   return {
-    loading: state.loading,
     state: stateSelector(state),
+    // loading: loadingSelector(state.loading),
   };
 }
 
@@ -34,6 +31,7 @@ function mapDispatchToProps(dispatch, ownProps) {
   return {
     // dispatch, // 默认不打开，在这个函数里处理 dispatch
     setState: setStateSelector(dispatch),
+    // ...dispatchSelector(dispatch),
   };
 }
 
@@ -46,7 +44,7 @@ function mergeProps(stateProps, dispatchProps, ownProps) {
   };
 }
 
-const Page = connect(mapStateToProps, mapDispatchToProps, mergeProps)(Content);
+const Page = connect(mapStateToProps, mapDispatchToProps, mergeProps)(React.memo(Body));
 
 Page.title = 'page.index.title';
 

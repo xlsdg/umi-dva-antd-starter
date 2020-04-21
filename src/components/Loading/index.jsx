@@ -6,7 +6,7 @@ import { Spin } from 'antd';
 
 import styles from './index.less';
 
-const Loading = React.memo(props => {
+function Loading(props) {
   const { className, children, ...others } = props;
 
   const spinProps = _.pick(others, ['delay', 'indicator', 'size', 'spinning', 'tip', 'wrapperClassName']);
@@ -17,10 +17,10 @@ const Loading = React.memo(props => {
       </Spin>
     </div>
   );
-});
+}
 
 Loading.propTypes = {};
 
 Loading.defaultProps = {};
 
-export default Loading;
+export default React.memo(Loading);

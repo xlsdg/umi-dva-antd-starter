@@ -8,7 +8,7 @@ import { Layout } from 'antd';
 
 import styles from './index.less';
 
-const UserLayout = React.memo(props => {
+function UserLayout(props) {
   const { children } = props;
 
   return (
@@ -16,10 +16,10 @@ const UserLayout = React.memo(props => {
       <Layout.Content className={styles.content}>{children}</Layout.Content>
     </Layout>
   );
-});
+}
 
 UserLayout.propTypes = {};
 
 UserLayout.defaultProps = {};
 
-export default UserLayout;
+export default React.memo(UserLayout);
