@@ -17,7 +17,7 @@ Body.propTypes = {};
 
 Body.defaultProps = {};
 
-const [stateSelector, setStateSelector] = createStateSelector('');
+const [stateSelector, setStateSelector] = createStateSelector();
 // const [dispatchSelector, loadingSelector] = createDispatchSelector();
 
 function mapStateToProps(state, ownProps) {
