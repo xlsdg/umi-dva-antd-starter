@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "antd": "^4.2.4",
+    "antd": "^4.2.5",
     "classnames": "^2.2.6",
     "dva": "next",
     "fast-deep-equal": "^3.1.1",
