@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@ant-design/icons": "^4.2.2",
-    "antd": "^4.5.4",
+    "antd": "^4.6.0",
     "classnames": "^2.2.6",
     "dva": "next",
     "fast-deep-equal": "^3.1.3",
