@@ -7,6 +7,7 @@ import { ConfigProvider } from 'antd';
 import UserLayout from '@/components/Layout/User';
 
 import { useDeepCompareEffect } from '@/utils/hook';
+import { isEqual } from '@/utils/helper';
 
 function BasicLayout(props) {
   const { children } = props;
@@ -14,7 +15,7 @@ function BasicLayout(props) {
   const location = useLocation();
   const locationRef = React.useRef(location);
   useDeepCompareEffect(() => {
-    if (!_.isEqual(locationRef.current, location)) {
+    if (!isEqual(locationRef.current, location)) {
       locationRef.current = location;
       window.scrollTo(0, 0);
     }
