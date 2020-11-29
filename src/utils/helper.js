@@ -167,7 +167,7 @@ export function generateSubscriptionByRoutes(routes) {
         const path = pathName[i];
         // console.log('\t@path:', path, '\t@prevPathName:', prevPathName, '\t@currPathName:', currPathName);
 
-        const regexp = pathToRegexp(path);
+        const regexp = PathToRegexp(path);
         const prevMatch = regexp.exec(prevPathName);
         const currMatch = regexp.exec(currPathName);
         // console.log('\t@prevMatch:', prevMatch, '\t@currMatch:', currMatch);
