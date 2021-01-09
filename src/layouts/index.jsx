@@ -33,14 +33,18 @@ function BasicLayout(props) {
     autoInsertSpaceInButton: false,
     // componentSize: ,
     // csp: { nonce: '' },
-    // form: {},
-    // renderEmpty,
-    // getPopupContainer: () => document.body,
-    // locale: ,
-    // prefixCls: '',
-    // pageHeader: { ghost: true },
     // direction: 'ltr',
-  };
+    // dropdownMatchSelectWidth: ,
+    // form: {},
+    // getPopupContainer: () => document.body,
+    // getTargetContainer: () => window,
+    // input: ,
+    // locale: ,
+    // pageHeader: { ghost: true },
+    // prefixCls: '',
+    // renderEmpty: ,
+    // space: ,
+    // virtual: ,  };
 
   return <ConfigProvider {...config}>{layout}</ConfigProvider>;
 }
