@@ -44,7 +44,8 @@ function BasicLayout(props) {
     // prefixCls: '',
     // renderEmpty: ,
     // space: ,
-    // virtual: ,  };
+    // virtual: ,
+  };
 
   return <ConfigProvider {...config}>{layout}</ConfigProvider>;
 }
