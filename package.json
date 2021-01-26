@@ -23,6 +23,7 @@
     "@umijs/plugin-antd": "^0.9.1",
     "@umijs/plugin-dva": "^0.10.0",
     "@umijs/plugin-locale": "^0.10.8",
+    "@umijs/plugin-qiankun": "^2.20.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-lodash": "^3.3.4",
     "cross-env": "^7.0.3",
